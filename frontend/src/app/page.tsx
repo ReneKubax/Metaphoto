@@ -1,94 +1,79 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { getPhotos } from '../utils/api';
+import styles from './page.module.css';
+import FilterBar from './components/FilterBar';
+import Pagination from './components/pagination';
+import PhotoList from './components/PhotoList';
+import Spinner from './components/Spinner';
 
 export default function Home() {
+  const [photos, setPhotos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [inputs, setInputs] = useState({ title: '', albumTitle: '', userEmail: '' });
+  const [filters, setFilters] = useState({ title: '', albumTitle: '', userEmail: '' });
+  const [limit, setLimit] = useState(25);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      setLoading(true);
+      try {
+        const data = await getPhotos({ ...filters, limit, offset });
+        setPhotos(data);
+      } catch (err) {
+        setError('Error fetching photos');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPhotos();
+  }, [filters, limit, offset]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
+
+  const handleFilterClick = () => {
+    setFilters(inputs);
+    setOffset(0);
+  };
+
+  const handlePageChange = (direction: string) => {
+    if (direction === 'prev' && offset > 0) {
+      setOffset(offset - limit);
+    } else if (direction === 'next') {
+      setOffset(offset + limit);
+    }
+  };
+
+  const handleLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLimit(Number(e.target.value));
+  };
+
+  if (loading) return <Spinner />;
+  
+  if (error) return <p>{error}</p>;
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <div className={styles.container}>
+        <h1 className={styles.heading}>MetaPhoto</h1>
+        <FilterBar
+          inputs={inputs}
+          handleInputChange={handleInputChange}
+          handleFilterClick={handleFilterClick}
         />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <Pagination
+          limit={limit}
+          offset={offset}
+          handlePageChange={handlePageChange}
+          handleLimitChange={handleLimitChange}
+        />
+        <PhotoList photos={photos} />
       </div>
     </main>
   );
