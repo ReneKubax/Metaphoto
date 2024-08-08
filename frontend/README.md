@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MetaPhoto App
 
-## Getting Started
+## Next.js
 
-First, run the development server:
+🌲 Scaffold Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 📄 `README.md` (Guide to use this project)
+- 📁 `src` (In this folder we have all components and services of this application)
+  - 📁 `app`
+    - 📁 `components`
+      - 📁 `FilterBar`
+        - 📄 `FilterBar.tsx`
+      - 📁 `Pagination`
+        - 📄 `Pagination.tsx`
+      - 📁 `PhotoList`
+        - 📄 `PhotoList.tsx`
+      - 📁 `Spinner`
+        - 📄 `Spinner.tsx`
+    - 📁 `api`
+      - 📄 `api.ts` (API service for fetching data from the backend)
+    - 📁 `pages`
+      - 📄 `page.tsx` (Main page component)
+      - 📄 `page.module.css` (Styles for the main page)
+  - 📁 `public` (Static assets such as images)
+  - 📁 `styles` (Global styles)
+  - 📄 `next.config.mjs` (Next.js configuration file)
+  - 📄 `tsconfig.json` (TypeScript configuration file)
+- 📁 `node_modules`
+- 📄 `package-lock.json`
+- 📄 `package.json` (Dependencies of the project)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✅ Code Conventions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- CLEAN CODE principles
+- Documentation of functions and correct naming of functions and variables.
+- Mandatory use of camel case convention
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
+<!-- BROWSER SUPPORT -->
 
-To learn more about Next.js, take a look at the following resources:
+## 🌏 Browser Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img src="https://user-images.githubusercontent.com/1215767/34348387-a2e64588-ea4d-11e7-8267-a43365103afe.png" alt="Chrome" width="16px" height="16px" /> Chrome | <img src="https://user-images.githubusercontent.com/1215767/34348380-93e77ae8-ea4d-11e7-8696-9a989ddbbbf5.png" alt="Edge" width="16px" height="16px" /> Edge |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Deploy on Vercel
+<!-- PROJECT MEMBERS -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧑🏻‍💻🧑🏻‍💻 Project Members
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<table>
+  <tr>
+     <td align="center"><a href="https://github.com/ReneKubax"><img src="https://lh7-us.googleusercontent.com/cdumdpS82APfMtRociVe7nIRT83FOb7p31PE3ltCx7turBdf8FDY-bFPDd3gFEC0cD0G3vo96kARseIBAVzx_qXT-g6luouj5OrR-moSkB6ZMeaU3pn81g0VpJ72H8
