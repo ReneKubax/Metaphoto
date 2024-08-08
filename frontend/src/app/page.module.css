@@ -50,6 +50,7 @@
 
 .pagination label {
   flex: 1;
+  color: #000;
 }
 
 .pagination input {
