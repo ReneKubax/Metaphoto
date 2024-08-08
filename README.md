@@ -49,8 +49,10 @@ Below is a series of commands to run each application and its url
 
 | APPLICATION  | URL                                 | COMMAND           | PORT |
 | ------------ | ----------------------------------- | ----------------- | ---- |
-| Backend| http://localhost:3000/    | npx ts-node src/index.ts| 3000 |
-| Frontend | http://localhost:3001/   |npm run dev| 3001 |
+| Backend| http://localhost:3000    | npx ts-node src/index.ts| 3000 |
+| Frontend | http://localhost:3001   |npm run dev| 3001 |
+| PROD Frontend | metaphoto-omega.vercel.app |
+| PROD Backend | https://metaphoto.onrender.com |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
