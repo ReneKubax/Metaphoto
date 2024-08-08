@@ -51,4 +51,9 @@
 
 <table>
   <tr>
-     <td align="center"><a href="https://github.com/ReneKubax"><img src="https://lh7-us.googleusercontent.com/cdumdpS82APfMtRociVe7nIRT83FOb7p31PE3ltCx7turBdf8FDY-bFPDd3gFEC0cD0G3vo96kARseIBAVzx_qXT-g6luouj5OrR-moSkB6ZMeaU3pn81g0VpJ72H8
+     <td align="center"><a href="https://github.com/ReneKubax"><img src="https://lh7-us.googleusercontent.com/cdumdpS82APfMtRociVe7nIRT83FOb7p31PE3ltCx7turBdf8FDY-bFPDd3gFEC0cD0G3vo96kARseIBAVzx_qXT-g6luouj5OrR-moSkB6ZMeaU3pn81g0VpJ72H8m8wwk7PLODE81LHOQRE9FGcYX1Sw=s2048" width="100px;" height="auto" alt="Rene Fuentes"/><br /><sub><b>Rene Fuentes</b></sub></a></td>
+      
+  </tr>
+</table>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
