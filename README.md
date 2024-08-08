@@ -59,7 +59,7 @@ Below is a series of commands to run each application and its url
 
 ## 📷 Images
 
-https://github.com/ReneKubax/tasks-app/assets/97212849/fe756ba0-5665-4b78-b018-c0758bb68553
+https://github.com/user-attachments/assets/0951af26-5bc5-49dd-ad18-df1ca75bb556
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
