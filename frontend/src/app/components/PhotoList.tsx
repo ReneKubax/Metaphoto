@@ -12,6 +12,13 @@ interface PhotoListProps {
   photos: Photo[];
 }
 
+/**
+ * Renders a list of photos with their details.
+ *
+ * @param {PhotoListProps} props - The props object containing the photos to render.
+ * @param {Photo[]} props.photos - An array of photo objects to render.
+ * @return {JSX.Element} A JSX element representing the photo list.
+ */
 const PhotoList: React.FC<PhotoListProps> = ({ photos }) => {
   return (
     <ul className={styles.photoList}>

@@ -8,6 +8,11 @@ import Pagination from './components/pagination';
 import PhotoList from './components/PhotoList';
 import Spinner from './components/Spinner';
 
+/**
+ * Renders the Home component which displays a list of photos.
+ *
+ * @return {JSX.Element} The rendered Home component.
+ */
 export default function Home() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,6 +23,11 @@ export default function Home() {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+    /**
+ * Fetches photos from the API based on the provided filters, limit, and offset.
+ *
+ * @return {Promise<void>} A promise that resolves when the photos have been fetched and set.
+ */
     const fetchPhotos = async () => {
       setLoading(true);
       try {
@@ -33,15 +43,30 @@ export default function Home() {
     fetchPhotos();
   }, [filters, limit, offset]);
 
+    /**
+   * Updates the state of the inputs object with the new value of the input element.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The event object representing the change in the input element.
+   * @return {void} This function does not return anything.
+   */
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
-
+/**
+ * Updates the filters state with the current input values and resets the offset to 0.
+ *
+ * @return {void} This function does not return anything.
+ */
   const handleFilterClick = () => {
     setFilters(inputs);
     setOffset(0);
   };
-
+/**
+ * Updates the offset state based on the direction of the page change.
+ *
+ * @param {string} direction - The direction of the page change ('prev' or 'next').
+ * @return {void} This function does not return anything.
+ */
   const handlePageChange = (direction: string) => {
     if (direction === 'prev' && offset > 0) {
       setOffset(offset - limit);
@@ -49,7 +74,12 @@ export default function Home() {
       setOffset(offset + limit);
     }
   };
-
+  /**
+   * Updates the limit state with the new value from the input element.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} e - The event object representing the change in the input element.
+   * @return {void} This function does not return anything.
+   */
   const handleLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLimit(Number(e.target.value));
   };

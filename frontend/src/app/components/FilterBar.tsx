@@ -7,6 +7,14 @@ interface FilterBarProps {
   handleFilterClick: () => void;
 }
 
+/**
+ * A functional component that renders a filter bar with input fields and a filter button.
+ *
+ * @param {FilterBarProps} inputs - An object containing the input values for the filter bar.
+ * @param {function} handleInputChange - A callback function to handle changes to the input fields.
+ * @param {function} handleFilterClick - A callback function to handle clicks on the filter button.
+ * @return {JSX.Element} The JSX element representing the filter bar.
+ */
 const FilterBar: React.FC<FilterBarProps> = ({ inputs, handleInputChange, handleFilterClick }) => {
   return (
     <div className={styles.filters}>
