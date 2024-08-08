@@ -43,7 +43,7 @@ This project requires Node.js to execute its functionalities. We recommend using
 
 1. Move to the appropriate directory: `cd front end or cd backend`.<br />
 2. Run `npm i`.
-3. Run `npm start or ng serve` (Default Application).
+3. Run `npm run dev or npx ts-node src/index.ts` (Default Application).
 
 Below is a series of commands to run each application and its url
 
